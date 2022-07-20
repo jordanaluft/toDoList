@@ -1,0 +1,10 @@
+import react from 'react';
+
+function List() {
+    return(
+        <h1>list</h1>
+        
+    )
+}
+
+export default List
