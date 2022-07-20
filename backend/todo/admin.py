@@ -3,3 +3,5 @@ from .models import Todo
 
 class TodoAdmin (admin.ModelAdmin):
     display_list = ('title', 'description', 'completed')
+
+admin.site.register(Todo, TodoAdmin)
