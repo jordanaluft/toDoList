@@ -1,9 +1,9 @@
 import react from 'react';
 
-function List() {
+function List(props) {
     return(
         <div className='list'>
-            <h3>Title</h3>
+            <h3>{props.title}</h3>
             <div className='list--buttons'>
                 <button>Edit</button>
                 <button>Delete</button>
