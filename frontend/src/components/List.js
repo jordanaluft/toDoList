@@ -2,8 +2,13 @@ import react from 'react';
 
 function List() {
     return(
-        <h1>list</h1>
-        
+        <div className='list'>
+            <h3>Title</h3>
+            <div className='list--buttons'>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
     )
 }
 
