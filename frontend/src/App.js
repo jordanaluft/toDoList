@@ -14,11 +14,14 @@ function App() {
 
   return ( 
     <div>
-       <Header />
-       <section>
-         {dataElements}
-       </section>
-       {/* <Form /> */}
+        <Header />
+        <section>
+          {dataElements}
+        </section>
+        {/* <Form /> */}
+        <button className='app--new-button'>
+          Add new task
+         </button> 
     </div>
     )
 }

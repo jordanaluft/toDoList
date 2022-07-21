@@ -46,3 +46,9 @@ body {
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.app--new-button {
+  background-color: gray;
+  color: white;
+  width: 50%;
+}
