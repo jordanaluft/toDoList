@@ -10,8 +10,8 @@ function App() {
   return ( 
     <div>
         <Header />
+        <Form />
         <List toDoList={toDoList}/>
-        {/* <Form /> */}
      </div>
     )
 }
