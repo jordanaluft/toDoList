@@ -21,10 +21,17 @@ function App() {
     setToDo(deleted);
   }
 
+  const addNew = (userInput) => {
+    let newTask = [...toDoList];
+    newTask = [ ...newTask, { id: toDoList.length + 1, title: userInput, completed: false
+    }];
+    setToDo(newTask);
+  }
+
   return ( 
     <div>
         <Header />
-        <Form />
+        <Form addNew={addNew}/>
         <List toDoList={toDoList} handleToggle={handleToggle}/>
         <button onClick={handleDelete}>Clear All</button>
      </div>
