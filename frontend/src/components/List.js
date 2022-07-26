@@ -1,15 +1,17 @@
 import react from 'react';
+import ToDo from './ToDo'
 
-function List(props) {
+const List = ({ toDoList }) => {
     return(
         <div className='list'>
-            <h3>{props.title}</h3>
-            <div className='list--buttons'>
-                <button>Edit</button>
-                <button>Delete</button>
-            </div>
+            {toDoList.map(todo => {
+                return (
+                    <ToDo todo={todo} />
+                        // {/* /returns each item/ */}
+                )
+            })}
         </div>
-    )
+    );
 }
 
-export default List
+export default List;

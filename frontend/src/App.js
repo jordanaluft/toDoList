@@ -1,25 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './components/Header'
 import Form from './components/Form'
 import List from './components/List'
-import Data from './Data'
+import data from './data.json'
 
 function App() {
-  const dataElements = Data.map(data => {
-    return <List
-            key={data.id}
-            {...data}
-            />
-     })
+  const [ toDoList, setToDo ]  = useState(data);
 
   return ( 
     <div>
         <Header />
-        <Form />
-        <section>
-          {dataElements}
-        </section>
-    </div>
+        <List toDoList={toDoList}/>
+        {/* <Form /> */}
+     </div>
     )
 }
 
