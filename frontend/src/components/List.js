@@ -1,12 +1,12 @@
 import react from 'react';
 import ToDo from './ToDo'
 
-const List = ({ toDoList }) => {
+const List = ({ toDoList, handleToggle }) => {
     return(
         <div className='list'>
             {toDoList.map(todo => {
                 return (
-                    <ToDo todo={todo} />
+                    <ToDo todo={todo} handleToggle={handleToggle}/>
                         // {/* /returns each item/ */}
                 )
             })}
