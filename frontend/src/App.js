@@ -14,11 +14,19 @@ function App() {
     setToDo(complete);
   }
 
+  const handleDelete = () => {
+    let deleted = toDoList.filter (title => {
+      return !title.completed;
+    });
+    setToDo(deleted);
+  }
+
   return ( 
     <div>
         <Header />
         <Form />
         <List toDoList={toDoList} handleToggle={handleToggle}/>
+        <button onClick={handleDelete}>Clear All</button>
      </div>
     )
 }
