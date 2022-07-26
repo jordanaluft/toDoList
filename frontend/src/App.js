@@ -15,13 +15,10 @@ function App() {
   return ( 
     <div>
         <Header />
+        <Form />
         <section>
           {dataElements}
         </section>
-        <Form />
-        <button className='app--new-button'>
-          Add new task
-         </button> 
     </div>
     )
 }

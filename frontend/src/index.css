@@ -19,20 +19,14 @@ body {
 }
 
 .form {
-  max-width: 1px;
-  display: grid;
-  gap: 10px;
-
-}
-
-.form--completed {
-  display:flex;
   align-items: center;
 }
 
-.form--checkbox {
-  margin-top: 5px;
-  margin-right: 10px;
+.form--inputs {
+  margin-top: 10px;
+  max-width: 1px;
+  display: grid;
+  gap: 10px;
 }
 
 .list--buttons {
@@ -47,8 +41,3 @@ body {
   margin-right: 10px;
 }
 
-.app--new-button {
-  background-color: gray;
-  color: white;
-  width: 50%;
-}
