@@ -18,7 +18,7 @@ function App() {
         <section>
           {dataElements}
         </section>
-        {/* <Form /> */}
+        <Form />
         <button className='app--new-button'>
           Add new task
          </button> 

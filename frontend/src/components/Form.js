@@ -7,10 +7,6 @@ function Form(){
                 type="text"
                 placeholder='Title'
             />
-            <textArea 
-                type="text"
-                placeholder='Description'
-            />
             <div className='form--completed'>
                 <input className='form--checkbox' type="checkbox"/>
                 <h3>Completed </h3>
