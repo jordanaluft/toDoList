@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState, } from 'react'
 import Header from './components/Header'
 import Form from './components/Form'
 import List from './components/List'
-import data from './data.json'
+import axios from "axios"
 
 import Button from '@mui/material/Button'
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -10,36 +10,29 @@ import Container from '@mui/material/Container'
 import { Card, Typography } from '@mui/material'
 
 function App() {
-  const [ toDoList, setToDo ]  = useState(data);
+  
+  const [ toDoList, setToDo ]  = useState([]);
 
-  const ListPage = () => {
-    let [item, setItem] = useState([])
-    
-    useEffect(() => {
-      getItem()
-    }, [])
+  useEffect(() => {
+    getData();
+  }, []);
 
-    let getItem = async () => {
-
-      let response = await fetch('http://localhost:8000/api/todos/')
-      let data = await response.json()
-      console.log('DATA:', data)
-      setItem(data)
-    }
-    return(
-      <div>
-        item
-      </div>
-    )
+  const getData = () => {
+      axios 
+      .get('http://localhost:8000/api/todos/')
+      .then((response) => {
+        const data = response.data
+        console.log('DATA:', data);
+        setToDo(data);   
+      })
   }
-
+ 
   const handleToggle = (id) => {
     let complete = toDoList.map(title => {
       return title.id === Number(id) ? { ...title, completed: !title.completed } : { ...title};
     });
-
     setToDo(complete);
-  }
+   }
 
   const handleDelete = () => {
     let deleted = toDoList.filter (title => {
