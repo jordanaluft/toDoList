@@ -1,46 +1,45 @@
 
 body {
   margin: 0;
-  margin-left: 10%;  
-  margin-right: 10%;
-  /* border: 10px black; */
-  padding: 10px;
+  /* background-color: gray; */
+  margin-right: 20%;
+  margin-left: 20%;
 }
 
 .header {
   display: flex;
-  background-color: pink;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .header--logo {
-  max-width: 80px;
+  max-width: 60px;
   margin-right: 20px;
 }
 
-.form {
-  align-items: center;
+.completed {
+  text-decoration: line-through;
 }
 
-.form--inputs {
-  margin-top: 10px;
-  max-width: 1px;
+.form {
   display: grid;
   gap: 10px;
+  align-items: center;
+  /* max-width: 600px; */
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 100px;
+  margin-left: 100px;
 }
 
-/* .list--buttons {
-  display: grid;
+.form--button {
+  max-width: 200px;
+  margin-left: 10%;
+}
+
+.clear--button {
+  margin-top: 10px;
 }
 
 .list {
-  display:flex;
-  justify-content:space-between;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-} */
-
-.completed {
-  text-decoration: line-through;
+  margin-bottom: 30px;
 }
