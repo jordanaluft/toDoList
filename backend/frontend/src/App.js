@@ -1,8 +1,9 @@
 import React, { useEffect, useState, } from 'react'
+import axios from "axios"
+
 import Header from './components/Header'
 import Form from './components/Form'
 import List from './components/List'
-import axios from "axios"
 
 import Button from '@mui/material/Button'
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -10,7 +11,6 @@ import Container from '@mui/material/Container'
 import { Card, Typography } from '@mui/material'
 
 function App() {
-  
   const [ toDoList, setToDo ]  = useState([]);
 
   useEffect(() => {
@@ -22,21 +22,27 @@ function App() {
       .get('http://localhost:8000/api/todos/')
       .then((response) => {
         const data = response.data
-        console.log('DATA:', data);
         setToDo(data);   
       })
   }
- 
+  
   const handleToggle = (id) => {
     let complete = toDoList.map(title => {
       return title.id === Number(id) ? { ...title, completed: !title.completed } : { ...title};
     });
     setToDo(complete);
+
+    const item = {
+      title: toDoList[id-1].title,
+      completed: toDoList[id].completed
+    }
+    axios
+      .put('http://localhost:8000/api/todos/'+id+'/', item)      
    }
 
   const handleDelete = () => {
     let deleted = toDoList.filter (title => {
-      return !title.completed;
+       return !title.completed;
     });
     setToDo(deleted);
   }
@@ -45,9 +51,17 @@ function App() {
     let newTask = [...toDoList];
     newTask = [ ...newTask, { id: toDoList.length + 1, title: userInput, completed: false
     }];
-    setToDo(newTask);
-  }
 
+    let id = toDoList.length+1
+    const item = {
+      id: id,
+      title: userInput,
+      completed: false
+    }
+    axios
+      .post('http://localhost:8000/api/todos/', item)      
+      setToDo(newTask);
+  }
   
   return ( 
     <div>

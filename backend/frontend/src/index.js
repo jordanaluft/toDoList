@@ -4,9 +4,6 @@ import './index.css';
 import App from './App';
 import { ThemeProvider, createTheme } from '@mui/material';
 
-
-
-
 const theme = createTheme({
   palette: {
     primary: {

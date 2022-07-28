@@ -1,7 +1,6 @@
-import { Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import SaveIcon from '@mui/icons-material/Save';
-
+import { Button, TextField } from '@mui/material';
 
 function Form({ addNew }){
     const [ userInput, setUserInput ] = useState('');
